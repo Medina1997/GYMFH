@@ -1,0 +1,48 @@
+<h1 style="text-align: center;" class="mt-5">Contáctanos</h1>
+<hr>
+<div class="container mt-5" style="width: 40%;">
+    <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>Ingresa tus Datos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form id="contactForm" [formGroup]="form" (ngSubmit)="submit()">
+            <mat-form-field>
+              <input  matInput placeholder="Nombre" formControlName="firstname" class="form-control"  name="firstname">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Apellido" formControlName="lastname" class="form-control"  name="lastname">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput placeholder="Telefono" formControlName="number" class="form-control"  name="number">
+              </mat-form-field>
+              <br>
+            <mat-form-field>
+              <input matInput placeholder="Correo Electronico" formControlName="email" class="form-control"  name="email">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <textarea rows="4" cols="50" matInput placeholder="Mensaje" formControlName="message" class="form-control"  name="message"></textarea>
+            </mat-form-field>
+            <br>
+            <button id="btnSubmit" mat-raised-button type="submit" color="primary">Enviar</button>
+            </form>
+        </mat-card-content>
+      </mat-card>
+      
+</div>
+<br>
+<h1 style="text-align: center;" class="mt-5">O Visítanos en:</h1>
+<hr>
+<div id="visitanos" class="container mt-5" style="width: 60%;">
+    <ul class="list-unstyled list-inline social text-center">
+        <li class="list-inline-item"><a href="#"><i class="fa fa-whatsapp"></i> 449 102 1980</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i> Oficial FH Gym</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i> FH GYM</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i> FHGym Oficial</a></li>
+      </ul>
+</div>
+
+<app-footer></app-footer>
