@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-ng-21302": {
+      "hosting": {
+        "prototipo": [
+          "login-ng-21302"
+        ]
+      }
+    }
+  }
+}

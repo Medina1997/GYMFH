@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,8 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
-
-
+import { AngularFireModule } from '@angular/fire';
+import {AngularFireAuthModule } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

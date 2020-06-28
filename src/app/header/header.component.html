@@ -1,14 +1,14 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" style="height: 40px;">
     <div fxHide.gt-xs>
         <button mat-icon-button (click)="onToggleSidenav()">
             <mat-icon>menu</mat-icon>
         </button>
     </div>
     <div>
-        <img src="../../assets/logo.png" width="40" height="40" alt="" [routerLink]="['home']"> 
-        <a [routerLink]="['home']"> FH Gym</a>
+        <img src="../../assets/logo.png" width="35" height="35" alt="" [routerLink]="['home']"> 
+        <a [routerLink]="['home']" style="font-size: 2ch;"> FH Gym</a>
     </div>
-    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs >
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
             <li routerLinkActive="active">
                 <a [routerLink]="['home']">Home</a>
@@ -25,6 +25,29 @@
             <li routerLinkActive="active">
                 <a [routerLink]="['ayuda']">Ayuda</a>
             </li>
+            <li>
+                <p> <i class="fas fa-dumbbell"></i> </p>
+             </li>
         </ul>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items" *ngIf="user$ | async as user; else login">
+            
+            <li routerLinkActive="active" *ngIf="user">
+                <a (click)="onLogout()">Logout</a> <!--se agrego el logout JJMQ -->
+            </li>
+            <li class="nav-item" *ngIf="user">
+                <a class="nav-link"> {{ user?.email }} </a>
+
+            </li>
+        </ul>
+        <ng-template #login>
+            <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li routerLinkActive="active">
+                <a [routerLink]="['login']">Login</a> <!--se agrego el login JJMQ -->
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['register']">Register</a> <!--se agrego el Register JJMQ -->
+            </li>
+        </ul>
+        </ng-template>
     </div>
   </mat-toolbar>

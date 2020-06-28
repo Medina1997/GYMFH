@@ -16,6 +16,8 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'preguntas', component: PreguntasComponent},
   {path: 'ayuda', component: AyudaComponent},
+  { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
+  { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
