@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     password2: new FormControl('')
   });
 
-  constructor(private authSvc: AuthService, private router:Router) { }
+  constructor(private authSvc: AuthService, private router: Router) { }
   contra: boolean = false;
   ngOnInit(): void {
   }
@@ -24,13 +24,13 @@ export class RegisterComponent implements OnInit {
   async onRegister() {
     const {email, password, password2} = this.registerForm.value;
     if ( password2 === password ) {
-    try{
+    try {
       const user = await this.authSvc.register(email, password);
-      if(user){
+      if (user) {
         // redirect
         this.router.navigate(['/home']);
       }
-    } catch (error) {console.log(error)}
+    } catch (error) {console.log(error); }
   } else {
     this.contra = true;
    // alert('error');
