@@ -12,16 +12,18 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterComponent implements OnInit {
     registerForm = new FormGroup({
     email: new FormControl(''),
-    password: new FormControl('')
+    password: new FormControl(''),
+    password2: new FormControl('')
   });
 
   constructor(private authSvc: AuthService, private router:Router) { }
-
+  contra: boolean = false;
   ngOnInit(): void {
   }
 
   async onRegister() {
-    const {email, password} = this.registerForm.value;
+    const {email, password, password2} = this.registerForm.value;
+    if ( password2 === password ) {
     try{
       const user = await this.authSvc.register(email, password);
       if(user){
@@ -29,5 +31,9 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/home']);
       }
     } catch (error) {console.log(error)}
+  } else {
+    this.contra = true;
+   // alert('error');
+  }
   }
 }
