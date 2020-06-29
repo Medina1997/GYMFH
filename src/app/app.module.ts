@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule } from '@angular/fire/auth';
+import { FormularioaltasComponent } from './formularioaltas/formularioaltas.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {AngularFireAuthModule } from '@angular/fire/auth';
     FooterComponent,
     AyudaComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    FormularioaltasComponent
   ],
   imports: [
     BrowserModule,

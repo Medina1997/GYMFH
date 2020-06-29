@@ -1,0 +1,27 @@
+<h1 style="text-align: center;" class="mt-5">Formulario de Altas</h1>
+<hr>
+<div class="container mt-5" style="width: 40%;">
+    <mat-card class="contact-card">
+        <mat-card-header>
+          <mat-card-title>Llene los campos:</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form id="altasForm" [formGroup]="form" (ngSubmit)="altas(correo, rutina, fecha)">
+            <mat-form-field>
+              <input  matInput placeholder="e-mail" formControlName="email" class="form-control"  name="email" #correo>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Rutina" formControlName="rutine" class="form-control"  name="rutine" #rutina>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput placeholder="Fecha" formControlName="date" class="form-control"  name="date" #fecha>
+            </mat-form-field>
+            <br>
+            <button id="btnaltas" mat-raised-button type="submit" color="primary">Dar de Alta</button>
+            </form>
+        </mat-card-content>
+      </mat-card>
+      
+</div>
