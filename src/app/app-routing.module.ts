@@ -1,3 +1,5 @@
+import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component';
+import { RutinaadminComponent } from './rutinaadmin/rutinaadmin.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
 import { ContactComponent } from './contact/contact.component';
@@ -10,12 +12,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 
+
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'preguntas', component: PreguntasComponent},
   {path: 'ayuda', component: AyudaComponent},
+  {path: 'rutinaadmin', component: RutinaadminComponent},
+  {path: 'rutinausuario', component: RutinausuarioComponent},
   { path: 'login', loadChildren: () => import('./auth/login/login.module').then(m => m.LoginModule) },
   { path: 'register', loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterModule) },
   {path: '**', pathMatch: 'full', redirectTo: 'home'}

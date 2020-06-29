@@ -20,6 +20,8 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule } from '@angular/fire/auth';
 import { FormularioaltasComponent } from './formularioaltas/formularioaltas.component';
+import { RutinaadminComponent } from './rutinaadmin/rutinaadmin.component';
+import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { FormularioaltasComponent } from './formularioaltas/formularioaltas.comp
     AyudaComponent,
     HeaderComponent,
     SidenavListComponent,
-    FormularioaltasComponent
+    FormularioaltasComponent,
+    RutinaadminComponent,
+    RutinausuarioComponent
   ],
   imports: [
     BrowserModule,
