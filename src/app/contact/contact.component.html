@@ -1,6 +1,60 @@
 <h1 style="text-align: center;" class="mt-5">Contáctanos</h1>
 <hr>
-<div class="container mt-5" style="width: 40%;">
+
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <form>
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="name" class="form-control" id="nombre" placeholder="nombre" autofocus>
+              </div>
+
+              <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="lastname" class="form-control" id="apellido" placeholder="apellido">
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Telefono:</label>
+                <input type="text" name="phone" class="form-control" id="telefono" placeholder="telefono">
+              </div>
+
+              <div class="form-group">
+                <label for="correo">E-mail:</label>
+                <input type="email" name="email" class="form-control" id="correo" placeholder="e-mail">
+              </div>
+
+              <div class="form-group">
+                <textarea name="message" rows="3" class="form-control" placeholder="Message"></textarea>
+              </div>
+
+              <button class="btn btn-primary btn-block" type="button" (click)="submit()">                
+                Enviar
+              </button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<h1 style="text-align: center;" class="mt-5">O Visítanos en:</h1>
+<hr>
+<div id="visitanos" class="container mt-5" style="width: 60%;">
+    <ul class="list-unstyled list-inline social text-center">
+        <li class="list-inline-item"><a href="#"><i class="fa fa-whatsapp"></i> 449 102 1980</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i> Oficial FH Gym</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i> FH GYM</a></li>
+        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i> FHGym Oficial</a></li>
+      </ul>
+</div>
+
+<!--<div class="container mt-5" style="width: 40%;">
     <mat-card class="contact-card">
         <mat-card-header>
           <mat-card-title>Ingresa tus Datos</mat-card-title>
@@ -8,7 +62,7 @@
         <mat-card-content>
           <form id="contactForm" [formGroup]="form" (ngSubmit)="submit()">
             <mat-form-field>
-              <input  matInput placeholder="Nombre" formControlName="firstname" class="form-control"  name="firstname">
+              <input  matInput placeholder="Nombre" formControlName="firstname" class="form-control"  name="firstname" >
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -43,7 +97,7 @@
         <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i> FH GYM</a></li>
         <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i> FHGym Oficial</a></li>
       </ul>
-</div>
+</div>-->
 
 
 <app-footer></app-footer>
