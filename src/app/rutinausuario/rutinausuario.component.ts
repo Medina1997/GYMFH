@@ -1,3 +1,4 @@
+import { ConexionService } from './../conexion.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rutinausuario.component.css']
 })
 export class RutinausuarioComponent implements OnInit {
-
-  constructor() { }
+  items: any;
+  nitems: any;
+  constructor(private conexion: ConexionService) { 
+  this.conexion.ListaItem().subscribe(item=>{
+  this.items = item;
+  console.log(this.items);
+})
+  }
 
   ngOnInit(): void {
   }

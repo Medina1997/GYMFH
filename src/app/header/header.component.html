@@ -25,20 +25,27 @@
             <li routerLinkActive="active">
                 <a [routerLink]="['ayuda']">Ayuda</a>
             </li>
-            <li routerLinkActive="active">
-                <a [routerLink]="['rutinaadmin']">Rutina Administrador</a>
-            </li>
-            <li routerLinkActive="active">
-                <a [routerLink]="['rutinausuario']">Rutina Usuario</a>
-            </li>
             <li>
                 <p> <i class="fas fa-dumbbell"></i> </p>
              </li>
         </ul>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items" *ngIf="user$ | async as user; else login">
+        </div>
+        <div fxFlex fxLayout fxLayoutAlign="end">
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items" *ngIf=" admin === '2' ;">
+            <li routerLinkActive="active">
+                <a [routerLink]="['rutinaadmin']">Rutina Administrador </a>
+            </li>
+        </ul>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items" *ngIf=" admin === '3'" >
+            <li routerLinkActive="active">
+                <a [routerLink]="['rutinausuario']">Rutina Usuario </a>
+            </li>
+            
+        </ul>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items" *ngIf="user$ | async as user; else login" style="padding-left: 15px;">
             
             <li routerLinkActive="active" *ngIf="user">
-                <a (click)="onLogout()">Logout</a> <!--se agrego el logout JJMQ -->
+                <a (click)="onLogout()"> Logout</a> <!--se agrego el logout JJMQ -->
             </li>
             <li class="nav-item" *ngIf="user">
                 <a class="nav-link"> {{ user?.email }} </a>
