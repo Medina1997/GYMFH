@@ -6,21 +6,11 @@
           <mat-card-title>Llene los campos:</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <form id="altasForm" [formGroup]="form" (ngSubmit)="altas(correo, rutina, fecha)">
-            <mat-form-field>
-              <input  matInput placeholder="e-mail" formControlName="email" class="form-control"  name="email" #correo>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-              <input matInput placeholder="Rutina" formControlName="rutine" class="form-control"  name="rutine" #rutina>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-              <input matInput placeholder="Fecha" formControlName="date" class="form-control"  name="date" #fecha>
-            </mat-form-field>
-            <br>
-            <button id="btnaltas" mat-raised-button type="submit" color="primary">Dar de Alta</button>
-            </form>
+          <form (ngSubmit)="agregar()">
+            <input type="text" placeholder="ingrese nombre" name="name" class="form-control" [(ngModel)]="item.name">
+            <input type="text" placeholder="ingrese rutina" name="rutina" class="form-control" [(ngModel)]="item.rutina">
+            <button class="btn btn-warning mt-3" type="submit">agregar</button>
+          </form>
         </mat-card-content>
       </mat-card>
       

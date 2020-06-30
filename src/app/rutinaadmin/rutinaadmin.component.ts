@@ -1,3 +1,4 @@
+import { ConexionService } from './../conexion.service';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
@@ -10,27 +11,21 @@ export class RutinaadminComponent implements OnInit {
 
   form;
   bandera: boolean=true;
-  constructor(private formBuilder: FormBuilder){
-    this.form = formBuilder.group({
-      email: ['', Validators.required],
-      rutine: ['', Validators.required],
-      date: ['', Validators.required],
-    });
+  item:any = {
+    name: '',
+    rutina: '',
+  }
+  constructor(private servicio: ConexionService){
+
   }
 
   ngOnInit(): void {
   }
 
-  altas(correo: HTMLInputElement, rutina: HTMLInputElement, fecha: HTMLInputElement) {
-    if (this.form.valid) {
-      correo.value = '';
-      rutina.value = '';
-      fecha.value = '';
-      alert("datos dados de alta");
-    }
-    else{
-      alert("comlete todos los datos");
-    }
+  agregar() {
+    this.servicio.agregarItem(this.item);
+    this.item.name = '';
+    this.item.rutina = '';
   }
 
 }
