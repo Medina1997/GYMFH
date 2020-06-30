@@ -1,4 +1,5 @@
 import { ConexionService } from './conexion.service';
+import { ServicioService } from './servicio.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -53,7 +54,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [ConexionService],
+  providers: [ConexionService, ServicioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
