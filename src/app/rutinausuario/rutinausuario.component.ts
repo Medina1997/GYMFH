@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutinausuarioComponent implements OnInit {
   items: any;
+  con: string;
   nitems: any;
   constructor(private conexion: ConexionService) { 
   this.conexion.ListaItem().subscribe(item=>{
@@ -16,7 +17,14 @@ export class RutinausuarioComponent implements OnInit {
 })
   }
 
+ 
+  
   ngOnInit(): void {
   }
 
+  consu(consulta: HTMLInputElement){
+    this.con = consulta.value;
+  }
+
+  
 }

@@ -5,15 +5,22 @@
 <div class="jumbotron">
     <p style="text-align: center;"><img src="../../assets/logo.png" alt="" style="width: 90px; height: 90px; text-align: center;"></p>
     <br>
-    <form class="form-inline" style="justify-content: center;">
-            <input style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="¿Qué es lo que busca?">
+    <form class="form-inline" style="justify-content: center;" (submit)=consu(consulta)>
+            <input id="nombre" name="nombre" style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="¿Qué es lo que busca?" #consulta>
             <button class="btn btn-dark my-2 my-sm-0" type="submit" ><i class="fas fa-arrow-alt-circle-right"></i>Consultar</button>
     </form>
+    <form class="form-inline" style="justify-content: center;" (submit)=consu(consulta)>
+        <input id="nombre" name="nombre" style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="¿Qué es lo que busca?" #consulta>
+        <button class="btn btn-dark my-2 my-sm-0" type="submit" ><i class="fas fa-arrow-alt-circle-right"></i>Consultar</button>
+</form>
+    
     <br>
   </div>
   <br>
-  <div class="alert alert-info" role="alert" *ngFor="let item of items">
+  <div *ngFor="let item of items">
+        <div class="alert alert-info" role="alert"  *ngIf="item.name === con">
         {{item.name}} - {{item.id}}
+        </div>
     </div>
 
   <app-footer></app-footer>
