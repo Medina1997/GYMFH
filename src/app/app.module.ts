@@ -1,3 +1,4 @@
+import { ConexionService } from './conexion.service';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ import {AngularFireAuthModule } from '@angular/fire/auth';
 import { FormularioaltasComponent } from './formularioaltas/formularioaltas.component';
 import { RutinaadminComponent } from './rutinaadmin/rutinaadmin.component';
 import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -48,9 +50,10 @@ import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component'
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
-  providers: [],
+  providers: [ConexionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
