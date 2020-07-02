@@ -6,9 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicioService {
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getJson(url:string){
-    return this.httpClient.get(url);
-  }
+  sendMessage(body) {
+    return this.httpClient.post('http://localhost:3000/formulario', body);
+    }
 }
