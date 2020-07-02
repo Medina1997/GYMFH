@@ -26,6 +26,7 @@ import { FormularioaltasComponent } from './formularioaltas/formularioaltas.comp
 import { RutinaadminComponent } from './rutinaadmin/rutinaadmin.component';
 import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ConexionService, ServicioService],
   bootstrap: [AppComponent]
