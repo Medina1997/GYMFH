@@ -13,14 +13,30 @@
         </mat-card-header>
         <img mat-card-image src="../../assets/logo.png" alt="" style="height: 300px;">
         <mat-card-content>
-          <p style="text-align: justify;">
+          <p style="text-align: justify;" #texto>
             Lo que comenzó como un solo gimnasio lleno de equipos caseros se ha convertido en una marca global a la 
             vanguardia del fitness. FH Gym tiene como objetivo brindar a sus miembros lo mejor: desde equipos modernos 
              hasta un ambiente limpio y acogedor con un personal experto.
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-stroked-button color="primary">Learn More</button>
+          <div *ngIf="play; else pausa">
+            <button class="btn btn-dark" (click)="start(texto.innerHTML)" >                
+              <i class="fab fa-accessible-icon"></i>
+            </button>
+          </div>
+           <ng-template #pausa>
+            <button class="btn btn-dark" (click)="start(texto.innerHTML)" >                
+              <i class="fab fa-accessible-icon"></i>
+            </button>
+            <button class="btn btn-danger" (click)="pause()">                
+              <i class="fas fa-stop-circle"></i>
+            </button>
+            <button class="btn btn-warning" (click)="resume()">                
+              <i class="fas fa-angle-double-right"></i>
+            </button>
+           </ng-template>
+           
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
@@ -35,8 +51,7 @@
           <p style="text-align: justify;">
             Cada FH Gym tiene una amplia selección de máquinas de fuerza para ayudarlo a fortalecerse. Con las máquinas 
             de fuerza seleccionadas, puede apuntar a áreas individuales y grupos musculares y atacarlos desde diferentes ángulos. 
-            Trabajamos con los mejores fabricantes del mundo para asegurarnos de que tenga el mejor equipo posible para ayudarlo 
-            a tener éxito.
+            
           </p>
         </mat-card-content>
         <mat-card-actions>
