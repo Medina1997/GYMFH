@@ -11,43 +11,26 @@ import { AuthService } from '../auth/services/auth.service';
   providers: [AuthService],
 })
 export class HeaderComponent implements OnInit {
-  public isLogged = false;
- // public user: any;
   public user$: Observable<any> = this.authSvc.afAuth.user;
-  us: User;
-  admin: string = '1' ;
-  corre: string = 'jose_jaime6@hotmail.com';
+  public comp: Observable<any> = this.authSvc.afAuth.user;
+
   @Output() public sidenavToggle = new EventEmitter();
-  //admin2: boolean = false;
+  
+  constructor(private authSvc: AuthService, private router: Router) {}
 
-  constructor(private authSvc: AuthService, private router: Router) { }
+  async ngOnInit() {}
 
-  async ngOnInit() {
-    this.us = await this.authSvc.getCurrentUser();
-    console.log(this.us?.email);
-    console.log(this.corre);
-    if (this.us?.email === this.corre) {
-      // this.isLogged = true;
-      this.admin = '2';
-    }
-
-    if (this.us?.email !== this.corre) {
-      // this.isLogged = true;
-      this.admin = '3';
-    }
-  }
-
-  async onLogout(){
-    try{
-      this.admin = '1';
+  async onLogout() {
+    try {
       await this.authSvc.logout();
-      this.router.navigate(['/home'])
-    }catch(error){console.log(error)}
-    
+      this.router.navigate(['/home']);
+    } catch (error) {
+      console.log(error);
+    }
   }
+
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
-  }
-
+  };
 }
