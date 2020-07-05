@@ -19,6 +19,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { HeaderComponent } from './header/header.component';
+import { ChartsModule } from 'ng2-charts';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule } from '@angular/fire/auth';
@@ -27,6 +28,8 @@ import { RutinaadminComponent } from './rutinaadmin/rutinaadmin.component';
 import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BarrasComponent } from './barras/barras.component';
+
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     SidenavListComponent,
     FormularioaltasComponent,
     RutinaadminComponent,
-    RutinausuarioComponent
+    RutinausuarioComponent,
+    BarrasComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +60,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFireAuthModule,
     AngularFirestoreModule,
     HttpClientModule,
+    ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ConexionService, ServicioService],
