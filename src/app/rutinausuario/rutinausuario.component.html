@@ -6,7 +6,7 @@
     <p style="text-align: center;"><img src="../../assets/logo.png" alt="" style="width: 90px; height: 90px; text-align: center;"></p>
     <br>
     <form class="form-inline" style="justify-content: center;" (submit)=consu(consulta)>
-            <input id="nombre" name="nombre" style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="buca por nombre" #consulta>
+            <input id="nombre" name="nombre" style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="Busca por nombre" #consulta>
             <button class="btn btn-dark my-2 my-sm-0" type="submit" ><i class="fas fa-arrow-alt-circle-right"></i>Consultar</button>
     </form>
     <form class="form-inline" style="justify-content: center;" (submit)=consu(consulta2)>
@@ -14,7 +14,7 @@
         <button class="btn btn-dark my-2 my-sm-0" type="submit" ><i class="fas fa-arrow-alt-circle-right"></i>Consultar</button>
 </form>
 <form class="form-inline" style="justify-content: center;" (submit)=consu(consulta3)>
-  <input list="tipo" placeholder="ingrese el tipo" name="tipo" style="width:80%;" class="form-control mr-sm-2" #consulta3>
+  <input list="tipo" placeholder="Ingrese el tipo" name="tipo" style="width:80%;" class="form-control mr-sm-2" #consulta3>
   <datalist id="tipo">
     <option value="isometrico">
     <option value="isotonico">
@@ -35,14 +35,11 @@
     <div class="alert alert-info" role="alert"  *ngIf="item.musculo === con">
     {{item.name}} - {{item.rutina}}
     </div>
-<<<<<<< HEAD
+
   <div *ngFor="let item of items">
       <div class="alert alert-info" role="alert"  *ngIf="item.tipo === con">
       {{item.name}} - {{item.rutina}}
       </div>
 </div>
-
-=======
 <app-barras></app-barras>
->>>>>>> c7258e26f2061b19fc182b32ac5f919dd4e08de1
   <app-footer></app-footer>
