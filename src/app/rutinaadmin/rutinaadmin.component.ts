@@ -13,7 +13,9 @@ export class RutinaadminComponent implements OnInit {
   bandera: boolean=true;
   item:any = {
     name: '',
+    musculo: '',
     rutina: '',
+    tipo: '',
   }
   constructor(private servicio: ConexionService){
 
@@ -25,7 +27,9 @@ export class RutinaadminComponent implements OnInit {
   agregar() {
     this.servicio.agregarItem(this.item);
     this.item.name = '';
+    this.item.musculo = '';
     this.item.rutina = '';
+    this.item.tipo = '';
   }
 
 }
