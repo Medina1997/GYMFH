@@ -29,6 +29,7 @@ import { RutinausuarioComponent } from './rutinausuario/rutinausuario.component'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BarrasComponent } from './barras/barras.component';
+import { DomseguroPipe } from './domseguro.pipe';
 
 
 
@@ -47,7 +48,8 @@ import { BarrasComponent } from './barras/barras.component';
     FormularioaltasComponent,
     RutinaadminComponent,
     RutinausuarioComponent,
-    BarrasComponent
+    BarrasComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,

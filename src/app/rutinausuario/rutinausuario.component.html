@@ -26,20 +26,76 @@
     <br>
   </div>
   <br>
-  <div *ngFor="let item of items">
-        <div class="alert alert-info" role="alert"  *ngIf="item.name === con">
-        {{item.name}} - {{item.rutina}}
-        </div>
-  </div>
-  <div *ngFor="let item of items">
-    <div class="alert alert-info" role="alert"  *ngIf="item.musculo === con">
-    {{item.name}} - {{item.rutina}}
-    </div>
 
-  <div *ngFor="let item of items">
-      <div class="alert alert-info" role="alert"  *ngIf="item.tipo === con">
-      {{item.name}} - {{item.rutina}}
-      </div>
-</div>
+  <div *ngFor="let item of items" >
+    <div *ngIf="item.name === con">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Rutina</th>
+            <th>Musculo</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>{{item.name}}</strong></td>
+            <td>{{item.rutina}}</td>
+            <td>{{item.musculo}}</td>
+            <td>{{item.tipo}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngFor="let item of items" >
+    <div *ngIf="item.musculo === con">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Rutina</th>
+            <th>Musculo</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.rutina}}</td>
+            <td><strong>{{item.musculo}}</strong></td>
+            <td>{{item.tipo}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngFor="let item of items" >
+    <div *ngIf="item.tipo === con">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Rutina</th>
+            <th>Musculo</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.rutina}}</td>
+            <td>{{item.musculo}}</td>
+            <td><strong>{{item.tipo}}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<br>
 <app-barras></app-barras>
   <app-footer></app-footer>

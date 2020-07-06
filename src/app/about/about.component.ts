@@ -13,6 +13,7 @@ export class AboutComponent implements OnInit {
   html = '';
   speech: any;
   speechData: any;
+  video = 'g3ZNprweps0';
   
 
   constructor() { 
