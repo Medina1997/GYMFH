@@ -1,6 +1,7 @@
 import { ServicioService } from './../servicio.service';
 import { Component, OnInit } from '@angular/core';
 import swal from 'sweetalert2';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 
 
@@ -10,28 +11,49 @@ import swal from 'sweetalert2';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  title = 'formReactivo';
+  form;
 
-  constructor( public servicioService: ServicioService){
-    
+  constructor( public servicioService: ServicioService, private formBuilder: FormBuilder){
+    this.form = formBuilder.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      phone: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      asunto: ['', Validators.required],
+      message: ['', Validators.required],
+    });
   }
 
 ngOnInit() {
 }
 
-contactForm(form, nombre: HTMLInputElement, apellido: HTMLInputElement, telefono: HTMLInputElement, correo: HTMLInputElement, asunt: HTMLInputElement, mensaje: HTMLInputElement) {
+contactForm(formulario, nombre: HTMLInputElement, apellido: HTMLInputElement, telefono: HTMLInputElement, correo: HTMLInputElement, asunt: HTMLInputElement, mensaje: HTMLInputElement) {
+  if (this.form.valid){
+    this.servicioService.sendMessage(formulario).subscribe(() => {
+      swal.fire('Formulario de contacto', 'Mensaje enviado correctamente', 'success');
+      });
+      nombre.value='';
+      apellido.value='';
+      telefono.value='';
+      correo.value='';
+      asunt.value='';
+      mensaje.value='';
+  } else {
+    swal.fire('Formulario de contacto', 'Error, complete todos los datos', 'error');
+  }
+  /*
   if(nombre.value=='' || apellido.value=='' || telefono.value=='' || correo.value=='' || asunt.value=='' || mensaje.value==''){
     swal.fire('Formulario de contacto', 'Error, complete todos los datos', 'error');
   }else{
-    this.servicioService.sendMessage(form).subscribe(() => {
-      swal.fire('Formulario de contacto', 'Mensaje enviado correctamente', 'success');
-      });
+    
   }
   nombre.value='';
   apellido.value='';
   telefono.value='';
   correo.value='';
   asunt.value='';
-  mensaje.value='';
+  mensaje.value='';*/
   }
 
 }

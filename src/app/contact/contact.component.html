@@ -1,6 +1,46 @@
 <h1 style="text-align: center;" class="mt-5">Contáctanos</h1>
 <hr>
+<br>
 
+<div class="main-div">
+  <mat-card class="contact-card" style="width: 40%;">
+    <mat-card-header>
+      <mat-card-title>Ingresa tus datos</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form id="contactForm" [formGroup]="form" (ngSubmit)="contactForm(form.value,nombre,apellido,telefono,correo,asunt,mensaje)" #formulario="ngForm">
+        <mat-form-field>
+          <input  matInput placeholder="firstname" id="nombre" formControlName="firstname" class="form-control"  name="firstname" ngModel #nombre>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="lastname" id="apellido" formControlName="lastname" class="form-control"  name="lastname" ngModel #apellido>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="phone number" id="telefono" formControlName="phone" class="form-control"  name="phone" ngModel #telefono>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="email" id="correo" formControlName="email" class="form-control"  name="email" ngModel #correo>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="Asunto" id="asunt" formControlName="asunto" class="form-control"  name="asunto" ngModel #asunt>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <textarea rows="4" cols="50" matInput placeholder="message" id="mensaje" formControlName="message" class="form-control"  name="message" ngModel #mensaje></textarea>
+        </mat-form-field>
+        <br>
+        <button id="btnSubmit" mat-raised-button type="submit" color="primary">Enviar</button>
+        </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!--
+  
 <div class="container p-4">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -45,7 +85,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 
 <br>
