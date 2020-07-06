@@ -4,10 +4,10 @@
           <mat-tab-group animationDuration="0ms">
             <mat-tab label="Agregar">
               <form (ngSubmit)="agregar()">
-              <input type="text" placeholder="ingrese nombre" name="name" class="form-control" [(ngModel)]="item.name">
-              <input type="text" placeholder="ingrese el musculo" name="musculo" class="form-control" [(ngModel)]="item.musculo">
-              <input type="text" placeholder="ingrese rutina" name="rutina" class="form-control" [(ngModel)]="item.rutina">
-              <input list="tipo" placeholder="ingrese el tipo" name="tipo" class="form-control" [(ngModel)]="item.tipo">
+              <input type="text" placeholder="ingrese nombre" name="name" class="form-control" [(ngModel)]="itemadd.name">
+              <input type="text" placeholder="ingrese el musculo" name="musculo" class="form-control" [(ngModel)]="itemadd.musculo">
+              <input type="text" placeholder="ingrese rutina" name="rutina" class="form-control" [(ngModel)]="itemadd.rutina">
+              <input list="tipo" placeholder="ingrese el tipo" name="tipo" class="form-control" [(ngModel)]="itemadd.tipo">
               <datalist id="tipo">
                 <option value="isometrico">
                 <option value="isotonico">
@@ -16,9 +16,20 @@
               <button class="btn btn-warning mt-3" type="submit">agregar</button>
             </form>
           </mat-tab>
-            <mat-tab label="Second">Content 2</mat-tab>
-            <mat-tab label="Third">Content 3</mat-tab>
+
+            <mat-tab label="Editar">
+             
+              <div *ngFor="let item of items">
+                    
+                      {{item.name}} - {{item.rutina}} - {{item.musculo}} - {{item.tipo}} 
+                      <div (click)="editar(item)"><a><i class="fas fa-pencil-alt"></i></a></div>
+                      <div (click)="eliminar(item)"><a><i class="far fa-trash-alt"></i></a></div>
+                    </div>
+                    
+
+            </mat-tab>
+            
           </mat-tab-group>
 </div>
-
 <app-footer></app-footer>
+

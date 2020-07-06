@@ -9,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class RutinausuarioComponent implements OnInit {
   items: any;
   con: string;
-  nitems: any;
   constructor(private conexion: ConexionService) { 
   this.conexion.ListaItem().subscribe(item=>{
   this.items = item;
-  console.log(this.items);
 })
   }
 
