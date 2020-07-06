@@ -1,6 +1,6 @@
 <h1 style="text-align: center;" class="mt-5">Administrador de rutinas</h1>
 <hr>
-<div class="container mt-5" style="width: 40%;">
+<div class="container mt-5" style="width: 60%;">
           <mat-tab-group animationDuration="0ms">
             <mat-tab label="Agregar">
               <form (ngSubmit)="agregar()">
@@ -17,18 +17,38 @@
             </form>
           </mat-tab>
 
-            <mat-tab label="Editar">
+            <mat-tab label="Borrar">
              
               <div *ngFor="let item of items">
-                    
                       {{item.name}} - {{item.rutina}} - {{item.musculo}} - {{item.tipo}} 
-                      <div (click)="editar(item)"><a><i class="fas fa-pencil-alt"></i></a></div>
                       <div (click)="eliminar(item)"><a><i class="far fa-trash-alt"></i></a></div>
                     </div>
-                    
-
             </mat-tab>
-            
+            <mat-tab label="Editar">
+              <div class="row">
+                <div class="col-4">
+                <div *ngFor="let item of items">
+                      {{item.name}}
+                      <a (click)="editar(item)"><i class="fas fa-pencil-alt"></i></a>
+                </div>
+              </div>
+              <div class="col-8">
+                <h2>Editar {{editarItem.name}}</h2>
+                <form (ngSubmit)="agregarItemEditado()">
+                  <input type="text" placeholder="ingrese nombre" name="name" class="form-control" [(ngModel)]="editarItem.name">
+                  <input type="text" placeholder="ingrese el musculo" name="musculo" class="form-control" [(ngModel)]="editarItem.musculo">
+                  <input type="text" placeholder="ingrese rutina" name="rutina" class="form-control" [(ngModel)]="editarItem.rutina">
+                  <input list="tipo" placeholder="ingrese el tipo" name="tipo" class="form-control" [(ngModel)]="editarItem.tipo">
+                  <datalist id="tipo">
+                    <option value="isometrico">
+                    <option value="isotonico">
+                    <option value="auxotonico">
+                  </datalist>
+                  <button class="btn btn-warning mt-3" type="submit">Editar</button>
+                </form>
+              </div>
+              </div>
+            </mat-tab>
           </mat-tab-group>
 </div>
 <app-footer></app-footer>

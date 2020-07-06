@@ -19,6 +19,13 @@ export class RutinaadminComponent implements OnInit {
     tipo: '',
   }
 
+  editarItem:any = {
+    name: '',
+    musculo: '',
+    rutina: '',
+    tipo: '',
+  }
+
   constructor(private servicio: ConexionService){
     this.servicio.ListaItem().subscribe(item=>{
       this.items = item;
@@ -41,7 +48,10 @@ export class RutinaadminComponent implements OnInit {
   }
 
   editar(item){
-
+    this.editarItem = item;
   }
 
+  agregarItemEditado(){
+    this.servicio.EditarItem(this.editarItem);
+  }
 }
