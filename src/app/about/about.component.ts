@@ -14,10 +14,11 @@ export class AboutComponent implements OnInit {
   speech: any;
   speechData: any;
   video = 'g3ZNprweps0';
+  bandera: boolean;
   
 
   constructor() { 
-    
+    this.bandera = true;
     this.speech = new Speech() // will throw an exception if not browser supported
     if(this.speech .hasBrowserSupport()) { // returns a boolean
         console.log("speech synthesis supported")
@@ -44,6 +45,9 @@ export class AboutComponent implements OnInit {
             console.error("An error occured while initializing : ", e)
         })
     }
+    setTimeout(() => {
+      this.bandera = false;
+ }, 3000);
   }
 
   ngOnInit(): void {

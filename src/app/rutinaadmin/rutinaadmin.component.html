@@ -19,10 +19,31 @@
 
             <mat-tab label="Borrar">
              
-              <div *ngFor="let item of items">
-                      {{item.name}} - {{item.rutina}} - {{item.musculo}} - {{item.tipo}} 
+              <!--<div *ngFor="let item of items">
+                {{item.name}} - {{item.rutina}} - {{item.musculo}} - {{item.tipo}} 
                       <div (click)="eliminar(item)"><a><i class="far fa-trash-alt"></i></a></div>
-                    </div>
+                    </div>-->
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Rutina</th>
+                      <th>Musculo</th>
+                      <th>Tipo</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of items">
+                      <td><strong>{{item.name}}</strong></td>
+                      <td>{{item.rutina}}</td>
+                      <td>{{item.musculo}}</td>
+                      <td>{{item.tipo}}</td>
+                      <td><button class="btn btn-danger "  (click)="eliminar(item)" type="submit"><a><i class="far fa-trash-alt"></i></a></button></td>
+                    </tr>
+                  </tbody>
+                </table>
+                      
             </mat-tab>
             <mat-tab label="Editar">
               <div class="row">

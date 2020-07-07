@@ -31,6 +31,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BarrasComponent } from './barras/barras.component';
 import { DomseguroPipe } from './domseguro.pipe';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -50,7 +51,8 @@ import { DomseguroPipe } from './domseguro.pipe';
     RutinaadminComponent,
     RutinausuarioComponent,
     BarrasComponent,
-    DomseguroPipe
+    DomseguroPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
