@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
@@ -62,6 +63,7 @@ import { DomseguroPipe } from './domseguro.pipe';
     AngularFireAuthModule,
     AngularFirestoreModule,
     HttpClientModule,
+    NgxQRCodeModule,
     ChartsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

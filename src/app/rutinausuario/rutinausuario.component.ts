@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class RutinausuarioComponent implements OnInit {
   items: any;
   con: string;
-  constructor(private conexion: ConexionService) { 
-  this.conexion.ListaItem().subscribe(item=>{
+  constructor(private conexion: ConexionService) {
+  this.conexion.ListaItem().subscribe(item => {
   this.items = item;
 })
   }
 
- 
-  
+
+
   ngOnInit(): void {
   }
 

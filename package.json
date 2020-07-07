@@ -30,6 +30,7 @@
     "firebase": "^7.15.5",
     "jquery": "^3.5.1",
     "ng2-charts": "^2.3.2",
+    "ngx-qrcode2": "^9.0.0",
     "rxjs": "~6.5.4",
     "speak-tts": "^2.0.8",
     "sweetalert2": "^9.15.2",

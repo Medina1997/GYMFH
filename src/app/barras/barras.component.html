@@ -1,14 +1,22 @@
+
+  <!--<input id="nombre" name="nombre" style="width:80%;" class="form-control mr-sm-2" type="text" placeholder="Busca por nombre" #consulta>
+  <button class="btn btn-dark my-2 my-sm-0" type="submit" ><i class="fas fa-arrow-alt-circle-right"></i>Consultar</button>-->
+  <label for="m1">Calorias primer mes: </label>
+  <input type="number" class="form-control" id="m1" [(ngModel)]="mes1"><br>
+  <label for="m2">Calorias segundo mes: </label>
+  <input type="number" class="form-control" id="m2" [(ngModel)]="mes2"><br>
+  <label for="m3">Calorias tercer mes: </label>
+  <input type="number" class="form-control" id="m3" [(ngModel)]="mes3"><br>
+  <label for="m4">Calorias cuarto mes: </label>
+  <input type="bumber" class="form-control" id="m4" [(ngModel)]="mes4">
+  <button class="btn btn-primary" (click)="randomize()">Enviar</button>
 <div>
-    <div>
-      <div style="display: block">
-        <h1>Grafica de las calorias de los alimentos (100gr) </h1>
-        <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-          [legend]="barChartLegend"
-          [chartType]="barChartType">
-        </canvas>
-      </div>
+  <div>
+    <div style="display: block">
+      <h1>Grafica de las calorias de los alimentos (100gr) </h1>
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
     </div>
   </div>
+</div>
