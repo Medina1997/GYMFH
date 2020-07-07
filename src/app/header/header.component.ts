@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../auth/services/auth.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -20,9 +21,10 @@ export class HeaderComponent implements OnInit {
 
   async ngOnInit() {}
 
-  async onLogout() {
+  async onLogout(usuario) {
     try {
       await this.authSvc.logout();
+      swal.fire(`Gracias por visitarnos ${usuario}.`, 'Tu sesión ha sido finalizada. ', 'success');
       this.router.navigate(['/home']);
     } catch (error) {
       console.log(error);

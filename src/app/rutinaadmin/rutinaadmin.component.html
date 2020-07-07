@@ -27,9 +27,11 @@
             <mat-tab label="Editar">
               <div class="row">
                 <div class="col-4">
-                <div *ngFor="let item of items">
-                      {{item.name}}
-                      <a (click)="editar(item)"><i class="fas fa-pencil-alt"></i></a>
+                <div *ngFor="let item of items" class="mt-2">
+                  <input style=" color: black;" type="text"  name="editartexto" class="form-control" value="{{item.name}}" disabled>
+                  <button class="btn btn-dark btn-lg btn-block" (click)="editar(item)" >                
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
                 </div>
               </div>
               <div class="col-8">

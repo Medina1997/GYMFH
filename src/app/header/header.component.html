@@ -25,9 +25,6 @@
             <li routerLinkActive="active">
                 <a [routerLink]="['ayuda']">Ayuda</a>
             </li>
-            <li>
-                <p> <i class="fas fa-dumbbell"></i> </p>
-             </li>
         </ul>
         </div>
         <div fxFlex fxLayout fxLayoutAlign="end">
@@ -40,7 +37,7 @@
                 <a [routerLink]="['/rutinausuario']"> Rutina usuario </a> <!--se agrego el logout JJMQ -->
             </li>
             <li routerLinkActive="active" *ngIf="user">
-                <a (click)="onLogout()"> Logout</a> <!--se agrego el logout JJMQ -->
+                <a (click)="onLogout( user?.email)"><i class="fas fa-external-link-square-alt"></i> Logout</a> <!--se agrego el logout JJMQ -->
             </li>
             <li class="nav-item" *ngIf="user">
                 <a class="nav-link"> {{ user?.email }} </a>
@@ -50,10 +47,10 @@
         <ng-template #login>
             <ul fxLayout fxLayoutGap="15px" class="navigation-items">
             <li routerLinkActive="active">
-                <a [routerLink]="['login']">Login</a> <!--se agrego el login JJMQ -->
+                <a [routerLink]="['login']"><i class="fas fa-sign-in-alt"></i> Login</a> <!--se agrego el login JJMQ -->
             </li>
             <li routerLinkActive="active">
-                <a [routerLink]="['register']" >Register</a> <!--se agrego el Register JJMQ -->
+                <a [routerLink]="['register']" ><i class="far fa-address-book"></i> Register</a> <!--se agrego el Register JJMQ -->
             </li>
         </ul>
         </ng-template>
