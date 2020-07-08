@@ -11,4 +11,7 @@ export class ServicioService {
   sendMessage(body) {
     return this.httpClient.post('http://localhost:3000/formulario', body);
     }
+    consulta(url: string) {
+      return this.httpClient.get(url);
+    }
 }
